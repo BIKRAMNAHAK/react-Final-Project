@@ -33,6 +33,7 @@
 
 .billing-info {
     margin-bottom: 20px;
+    display: flex;
 }
 
 .billing-info h3 {
@@ -70,3 +71,7 @@
     color: #666;
 }
 
+.order-img{
+    width: 50%;
+    height: 80%;
+}

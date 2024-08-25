@@ -34,9 +34,9 @@ const updateProduct = () => {
     };
 };
 
-const Showoredr =(data)=>{
+const Showoredr = (data) => {
     console.log("data");
-    
+
     return {
         type: 'SHOWORDER',
         payload: data
@@ -190,15 +190,31 @@ export const oredrShowAsync = (showOrder) => {
 
             let foundOrder = null
             querySnapshot.forEach((doc) => {
-                
+
                 if (doc.id === showOrder) {
                     foundOrder = { id: doc.id, ...doc.data() };
                 }
             });
             dispatch(Showoredr(foundOrder))
-            
+
         } catch (err) {
             console.error(err);
         }
     }
 }
+
+export const updateOrderStatusAsync = (orderId, status) => {
+    console.log("status",status);
+    
+    return async (dispatch) => {
+        try {
+
+            await updateDoc(doc(db, "UserOrder", orderId), { status: status });
+
+
+            dispatch(getUserorderPro());
+        } catch (error) {
+            console.error("Error updating order status: ", error);
+        }
+    }
+};

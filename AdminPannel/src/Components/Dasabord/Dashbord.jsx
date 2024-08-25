@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Dashbord() {
     const dispatch = useDispatch();
     const navigate = useNavigate()
-    const { userOrder } = useSelector(state => state.admin);
+    const { userOrder, userOrderDetails } = useSelector(state => state.admin);
 
     // Calculate the total sales
     const totalSell = userOrder.reduce((acc, sell) => {
@@ -17,8 +17,11 @@ function Dashbord() {
     const handleShowOrder =(id)=>{
         console.log("odershow id", id);
         dispatch(oredrShowAsync(id))
+    
+    }
+
+    if(userOrderDetails){
         navigate('/orders')
-        
     }
 
     useEffect(() => {
@@ -54,6 +57,7 @@ function Dashbord() {
                                     <th>User</th>
                                     <th>Product Name</th>
                                     <th>Quintity</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -67,6 +71,7 @@ function Dashbord() {
                                                 <td>{userdata.fname} {userdata.lname}</td>
                                                 <td>{userdata.product}</td>
                                                 <td>{userdata.quantity}</td>
+                                                <td className='text-success'>{userdata.status}</td>
                                                 <td><div className='btn btn-primary'  onClick={()=>handleShowOrder(userdata.id)}>Views</div></td>
                                             </tr>
                                         )
