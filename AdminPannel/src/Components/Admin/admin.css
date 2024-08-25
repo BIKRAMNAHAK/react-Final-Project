@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+header {
+    background-color: #2874F0;
+    color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    position: fixed;
+    height: 664px;
+    top: 64px; 
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.cards {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.table-container {
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+.img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.profile{
+    background-color: #fff;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid black
+}
+.profile-img img{
+    width: 60px;
+    height: 60px;
+}
+.profile-text{
+    width: 80%;
+    height: 50px;
+    margin-left: 10px;
+    color: #333;
+}
+
+.profile-text{
+    font-size: small;
+}
+
+nav ul li .active {
+    font-weight: bold;
+    color: yellow;
+}
+
+
+.sidebar ul li.active a {
+    background-color: #f0f0f0; 
+    color: green; 
+}

@@ -1,0 +1,15 @@
+main {
+    margin-left: 270px;
+    padding: 8px;
+    position: relative;
+    bottom: 0px;
+    flex-grow: 1;
+    overflow: hidden;
+    height: 100vh;
+    margin-top: 4px;
+    overflow-y: scroll;
+}
+
+body{
+    overflow-y: hidden;
+}
