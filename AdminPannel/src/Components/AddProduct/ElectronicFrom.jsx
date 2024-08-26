@@ -13,6 +13,8 @@ function ElectronicFrom() {
         name: '',
         description: '',
         price: '',
+        discount: '',
+        shoping: '',
         category: '',
         image: ''
     });
@@ -38,15 +40,24 @@ function ElectronicFrom() {
         e.preventDefault();
         console.log(addProducts);
 
+
         dispatch(addProductAsync(addProducts));
         setAddProducts({
             name: '',
             description: '',
             price: '',
+            discount: '',
+            shoping: '',  
             category: '',
             image: ''
         });
-        navigate('/addproduct')
+
+        console.log("updatedFormData",addProducts);
+        
+        setTimeout(()=>{
+            navigate('/addproduct')
+        },3000)
+        
     };
     return (
         <div>
@@ -76,17 +87,42 @@ function ElectronicFrom() {
                                 onChange={handleChange}
                             />
                         </Form.Group>
-
-                        <Form.Group controlId="productPrice" className="mb-3">
+                        
+                    <div className='d-flex  gap-5'>
+                    <Form.Group controlId="productPrice" className="mb-3">
                             <Form.Label>Price</Form.Label>
                             <Form.Control
-                                type="number"
+                                type="tel"
                                 placeholder="Enter product price"
                                 name="price"
                                 value={addProducts.price}
                                 onChange={handleChange}
                             />
                         </Form.Group>
+
+                        <Form.Group controlId="productPrice" className="mb-3">
+                            <Form.Label>Discount</Form.Label>
+                            <Form.Control
+                                type="tel"
+                                placeholder="Dsicount"
+                                name="discount"
+                                value={addProducts.discount}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId="productPrice" className="mb-3">
+                            <Form.Label>shoping Charge</Form.Label>
+                            <Form.Control
+                                type="tel"
+                                placeholder="shoping fee"
+                                name="shoping"
+                                value={addProducts.shoping}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                    </div>
+                        
 
                         <Form.Group controlId="productCategory" className="mb-3">
                             <Form.Label>Category</Form.Label>

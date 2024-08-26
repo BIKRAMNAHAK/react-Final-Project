@@ -13,8 +13,9 @@ function GroceryForm() {
         name: '',
         description: '',
         price: '',
+        discount: '',
+        shoping: '',
         category: '',
-        quantity: '',  // New field for quantity
         image: ''
     });
 
@@ -43,8 +44,9 @@ function GroceryForm() {
             name: '',
             description: '',
             price: '',
+            discount: '',
+            shoping: '',
             category: '',
-            quantity: '',  // Reset quantity field
             image: ''
         });
         navigate('/addproduct');
@@ -53,7 +55,7 @@ function GroceryForm() {
     return (
         <div>
             <main>
-                <Container className='m-0'>
+                <Container className='mb-5'>
                     <h2 className='bg-warning py-3 ps-2'>Add Grocery Items</h2>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="productName" className="mb-3">
@@ -79,16 +81,40 @@ function GroceryForm() {
                             />
                         </Form.Group>
 
-                        <Form.Group controlId="productPrice" className="mb-3">
-                            <Form.Label>Price</Form.Label>
-                            <Form.Control
-                                type="number"
-                                placeholder="Enter product price"
-                                name="price"
-                                value={addProducts.price}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
+                        <div className='d-flex  gap-5'>
+                            <Form.Group controlId="productPrice" className="mb-3">
+                                <Form.Label>Price</Form.Label>
+                                <Form.Control
+                                    type="tel"
+                                    placeholder="Enter product price"
+                                    name="price"
+                                    value={addProducts.price}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+
+                            <Form.Group controlId="productPrice" className="mb-3">
+                                <Form.Label>Discount</Form.Label>
+                                <Form.Control
+                                    type="tel"
+                                    placeholder="Dsicount"
+                                    name="discount"
+                                    value={addProducts.discount}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+
+                            <Form.Group controlId="productPrice" className="mb-3">
+                                <Form.Label>shoping Charge</Form.Label>
+                                <Form.Control
+                                    type="tel"
+                                    placeholder="shoping fee"
+                                    name="shoping"
+                                    value={addProducts.shoping}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+                        </div>
 
                         <Form.Group controlId="productCategory" className="mb-3">
                             <Form.Label>Category</Form.Label>

@@ -58,6 +58,9 @@
     color: #333;
 }
 
+tbody{
+    height: auto;
+}
 .invoice-total {
     text-align: right;
     margin-top: 20px;

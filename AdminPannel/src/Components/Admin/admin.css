@@ -59,40 +59,6 @@ header nav ul li a {
     font-weight: bold;
 }
 
-
-.cards {
-    display: flex;
-    gap: 1rem;
-}
-
-.card {
-    background-color: #fff;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    flex: 1;
-    text-align: center;
-}
-
-.table-container {
-    margin-top: 2rem;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-table th {
-    background-color: #f4f4f4;
-}
-
 .img {
     width: 150px;
     height: 100px;

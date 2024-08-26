@@ -1,8 +1,7 @@
 
 const initialState ={
     allproducts : [],
-    order: [],
-    addtocart : [],
+    order: null,
     product : null
 
 }
@@ -22,7 +21,13 @@ const initialState ={
                     ...state,
                     product: singlePro
                 }
-            case 'VIEWORDERLIST':
+            // case 'VIEWORDERLIST':
+            //     return{
+            //         ...state,
+            //         order:action.payload
+            //     }
+
+            case 'ORDERSUCDATA':
                 return{
                     ...state,
                     order:action.payload

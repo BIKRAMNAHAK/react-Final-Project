@@ -1,0 +1,73 @@
+
+.container1 {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-success {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-success h1 {
+    color: #28a745;
+}
+
+.order-summary, .order-info {
+    margin-bottom: 20px;
+}
+
+.order-summary h2, .order-info h2 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 5px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-details h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.product-details p {
+    margin: 5px 0;
+}
+
+.continue-shopping {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.continue-shopping .btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.continue-shopping .btn:hover {
+    background-color: #218838;
+}

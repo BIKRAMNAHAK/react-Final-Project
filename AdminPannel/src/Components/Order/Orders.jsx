@@ -10,13 +10,14 @@ import { useNavigate } from 'react-router'
 function Orders() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { userOrderDetails } = useSelector(state => state.admin)
+    const { userOrderDetails,orderStatus } = useSelector(state => state.admin)
     console.log("orderList", userOrderDetails);
 
     const handleConfirmOrder = () => {
         dispatch(updateOrderStatusAsync(userOrderDetails.id, 'Confirmed'));
         navigate('/')
     }
+
 
     return (
         <>
@@ -58,8 +59,9 @@ function Orders() {
                                     <thead>
                                         <tr>
                                             <th>Item</th>
-                                            <th>Quantity</th>
                                             <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
                                             <th>Shoping fee</th>
                                             <th>Discount</th>
                                         </tr>
@@ -67,8 +69,9 @@ function Orders() {
                                     <tbody>
                                         <tr>
                                             <td>{userOrderDetails.product}</td>
-                                            <td>{userOrderDetails.quantity}</td>
                                             <td>{userOrderDetails.price}</td>
+                                            <td>{userOrderDetails.quantity}</td>
+                                            <td>{userOrderDetails.price * userOrderDetails.quantity}</td>
                                             <td>{userOrderDetails.shopinfee}</td>
                                             <td>{userOrderDetails.discount}%</td>
                                         </tr>

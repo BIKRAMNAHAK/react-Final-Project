@@ -8,6 +8,11 @@ function Dashbord() {
     const dispatch = useDispatch();
     const navigate = useNavigate()
     const { userOrder, userOrderDetails } = useSelector(state => state.admin);
+    
+    
+    //count how many users order here
+    const user = new Set(userOrder.map(order => `${order.email}`));
+
 
     // Calculate the total sales
     const totalSell = userOrder.reduce((acc, sell) => {
@@ -15,10 +20,11 @@ function Dashbord() {
     }, 0);
 
     const handleShowOrder =(id)=>{
-        console.log("odershow id", id);
         dispatch(oredrShowAsync(id))
     
     }
+
+    
 
     if(userOrderDetails){
         navigate('/orders')
@@ -30,7 +36,7 @@ function Dashbord() {
 
     return (
         <>
-            <main>
+            <main className='scroll-hidden'>
                 <div className='dashbord'>
                     <h1>Dashboard</h1>
                     <div className="cards">
@@ -39,12 +45,12 @@ function Dashbord() {
                             <p>₹{totalSell}</p>
                         </div>
                         <div className="card">
-                            <h2>Total Orders</h2>
+                            <h2>Total Orders Items</h2>
                             <p>{userOrder.length}</p>
                         </div>
                         <div className="card">
                             <h2>Total Users</h2>
-                            <p>500</p>
+                            <p>{user.size}</p>
                         </div>
                     </div>
                     <div className="table-container">
@@ -61,7 +67,7 @@ function Dashbord() {
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className='scroll-y'>
                                 {
                                     userOrder.map((userdata) => {
                                         return (
@@ -71,7 +77,14 @@ function Dashbord() {
                                                 <td>{userdata.fname} {userdata.lname}</td>
                                                 <td>{userdata.product}</td>
                                                 <td>{userdata.quantity}</td>
-                                                <td className='text-success'>{userdata.status}</td>
+                                                {
+                                                    userdata.status
+                                                     ? 
+                                                     <td className='text-success'>{userdata.status}</td>
+                                                    :
+                                                    <td><p className='text-warning'>Panding</p></td>
+                                                }
+                                               
                                                 <td><div className='btn btn-primary'  onClick={()=>handleShowOrder(userdata.id)}>Views</div></td>
                                             </tr>
                                         )

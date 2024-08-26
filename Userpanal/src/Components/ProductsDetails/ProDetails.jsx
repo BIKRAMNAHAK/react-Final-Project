@@ -6,6 +6,7 @@ import logo from '../../assets/images/flipkart.png'
 
 function ProDetails() {
     const { product } = useSelector((state) => state.userReducer);
+    
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,7 +20,7 @@ function ProDetails() {
     };
 
     const price = parseInt(product?.price) || 0;
-    const discount = 20;
+    const discount = parseInt(product?.discount);
     const discountPrice = price - (price * discount) / 100;
 
     if (!product) {
@@ -41,13 +42,12 @@ function ProDetails() {
 
             <nav className="category-nav">
                 <ul>
-                    <li><a href="/electronic">Electronics</a></li>
-                    <li>TVs & Appliances</li>
-                    <li>Men</li>
-                    <li>Women</li>
-                    <li>Baby & Kids</li>
-                    <li>Home & Furniture</li>
-                    <li>Sports, Books & More</li>
+                    <li><a href="/electronic" className='text-decoration-none text-dark'>Electronics</a></li>
+                    <li><a href="/fashion" className='text-decoration-none text-dark'>Men</a></li>
+                    <li><a href="/fashion" className='text-decoration-none text-dark'>Women</a></li>
+                    <li><a href="/fashion" className='text-decoration-none text-dark'>Baby & Kids</a></li>
+                    <li><a href="/homefurniture" className='text-decoration-none text-dark'>Home & Furniture</a></li>
+                    <li><a href="/Grocery" className='text-decoration-none text-dark'>Grocery</a></li>
                 </ul>
             </nav>
 

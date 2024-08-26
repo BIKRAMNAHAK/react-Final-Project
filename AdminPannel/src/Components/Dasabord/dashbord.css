@@ -1,3 +1,56 @@
-.dashbord{
-    overflow-y: scroll;
+
+.table-container {
+    margin-top: 2rem;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.scroll-y{
+    display: block;
+    height: 300px;
+    overflow-y: auto; 
+    scrollbar-width: none;
+  }
+  
+  thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+
+table th, table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+.cards {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.scroll-hidden{
+    overflow-y: hidden;
+}
+
+/* .scroll-y{
+    overflow-y: scroll;
+} */

@@ -24,6 +24,14 @@ export const AddToCartAction =(addtocartPro)=>{
     }
 }
 
+const Showoredr =(orderSucdata) =>{
+    console.log("showOrder",orderSucdata);
+    return{
+        type : 'ORDERSUCDATA',
+        payload : orderSucdata
+    }
+}
+
 
 export const getProductsAsync = () => {
     return async (dispatch) => {
@@ -62,6 +70,27 @@ export const addUserOrderAsync =(userOrder) =>{
         }catch(err){
             console.log("can not gat data",err);
             
+        }
+    }
+}
+
+
+export const oredrShowAsync = (showOrder) => {
+    return async (dispatch) => {
+        try {
+            const querySnapshot = await getDocs(collection(db, 'UserOrder'));
+
+            let foundOrder = null
+            querySnapshot.forEach((doc) => {
+
+                if (doc.id === showOrder) {
+                    foundOrder = { id: doc.id, ...doc.data() };
+                }
+            });
+            dispatch(Showoredr(foundOrder))
+
+        } catch (err) {
+            console.error(err);
         }
     }
 }
